@@ -74,19 +74,27 @@ body {
 
 .nav-content ul {
   list-style: none;
+  margin-bottom: 0.5rem;
 }
 
 .nav-content ul ul {
-  margin-left: 1rem;
+  margin-left: 1.25rem;
+  border-left: 2px solid var(--border-color);
+  padding-left: 0.75rem;
+}
+
+.nav-content ul li {
+  margin-bottom: 0.25rem;
 }
 
 .nav-content a {
   color: var(--text-primary);
   text-decoration: none;
   display: block;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 4px;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
 }
 
 .nav-content a:hover {

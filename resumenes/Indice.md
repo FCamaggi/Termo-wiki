@@ -2,7 +2,18 @@
 
 ## Libro Principal
 
-- [Termodinámica](./libro/termodinamica.md)
+### Fundamentos
+
+- [Conceptos Básicos](./libro/conceptos_basicos.md)
+- [Propiedades Termodinámicas](./libro/propiedades.md)
+- [Presión y Temperatura](./libro/presion_temperatura.md)
+- [Expansión Térmica](./libro/expansion_termica.md)
+
+### Energía y Primera Ley
+
+- [Energía](./libro/energia.md)
+- [Transferencia de Calor](./libro/transferencia_calor.md)
+- [Primera Ley de la Termodinámica](./libro/primera_ley.md)
 
 ## Formulario
 
