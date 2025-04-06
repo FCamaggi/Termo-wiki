@@ -4,78 +4,155 @@
 **Profesor:** Iván Muñoz (Secciones 5 y 7)  
 **Fecha:** 28-03-2025
 
+## Introducción
+
+Esta ayudantía se centra en los mecanismos de transferencia de calor y el trabajo en sistemas termodinámicos. Estos conceptos son fundamentales para entender cómo la energía se transfiere entre sistemas y cómo realizar cálculos prácticos en ingeniería.
+
+> 💡 **Objetivo de la Ayudantía**: Comprender y aplicar los conceptos de transferencia de calor y trabajo en problemas prácticos de ingeniería térmica.
+
 ## 1. Calor y Balance de Energía
 
 ### 1.1 Tipos de Transferencia de Calor
 
-Existen tres formas principales de transferencia de calor:
+#### 1.1.1 Conducción
 
-#### Conducción
+```
+T_1 > T_2
+┌────────────┐    Flujo de calor
+█  T_1     █ ───────────→
+█            █    q = -k\nabla T
+█     T_2  █
+└────────────┘
+```
 
-Es la forma común de transferencia entre sólidos. Se rige por la ecuación:
+**Fórmula**: \dot{q} = kA\frac{\Delta T}{\Delta x}
 
-$\dot{Q} = k \cdot A \cdot \frac{dT}{dx} = k \cdot A \cdot \frac{\Delta T}{\Delta x}$
+| Material | k [W/m·K] | Aplicación típica |
+| -------- | --------- | ----------------- |
+| Cobre    | 385       | Intercambiadores  |
+| Aluminio | 205       | Disipadores       |
+| Acero    | 50        | Estructuras       |
+| Madera   | 0.12-0.04 | Aislamiento       |
+| Aire     | 0.026     | Aislante natural  |
 
-Donde:
+#### 1.1.2 Convección
 
-- $k$ = conductividad térmica (depende del material)
-- $A$ = área transversal o de contacto
-- $\frac{dT}{dx}$ = gradiente de temperatura
-- $\Delta T$ = diferencia de temperatura
-- $\Delta x$ = distancia entre medios
+```
+    Fluido en movimiento
+         ↑   ↑   ↑
+    ┌───────────────┐
+    │   Superficie                       │
+    └───────────────┘
+    T_s > T_{fluido}
+```
 
-#### Convección
+**Fórmula**: \dot{q} = hA(T_s - T_f)
 
-Es la forma común de transferencia en fluidos. Se rige por la ecuación:
+| Tipo de Convección | h [W/m²·K] | Ejemplo            |
+| ------------------ | ---------- | ------------------ |
+| Natural en aire    | 2-25       | Radiador doméstico |
+| Forzada en aire    | 25-250     | Ventilador         |
+| Natural en agua    | 50-1000    | Calentador solar   |
+| Forzada en agua    | 100-20,000 | Intercambiador     |
 
-$\dot{Q} = h \cdot A \cdot |T_s - T_f|$
+#### 1.1.3 Radiación
 
-Donde:
+```
+    Emisión de ondas EM
+         ≈≈≈≈≈≈≈
+    ┌───────────────┐
+    │   Superficie  │
+    │   caliente    │ T
+    └───────────────┘
+```
 
-- $h$ = coeficiente de transferencia
-- $A$ = área transversal o de contacto
-- $T_s$ = temperatura de la superficie
-- $T_f$ = temperatura del fluido lejos de la superficie
+**Fórmula**: \dot{q} = \varepsilon\sigma AT^4
 
-#### Radiación
-
-Es una forma que se puede transmitir a través de medio material o el vacío. Se rige por:
-
-$\dot{Q} = \varepsilon \sigma A \cdot (T_o^4 - T_{ambiente}^4)$
-
-Donde:
-
-- $\varepsilon$ = emisividad de la superficie (depende del material)
-- $\sigma$ = Constante de Stefan-Boltzmann $(5.67 \times 10^{-8} \text{ W/(m^2 \cdot K^4)})$
-- $A$ = área transversal o de contacto
-- $T_o$ = temperatura del objeto emisor
-- $T_{ambiente}$ = temperatura del ambiente (0K en el vacío)
-
-Además, para la radiación se define la absorbancia $\alpha$:
-
-- Calor absorbido: $\dot{Q}_{abs} = \alpha \dot{Q}_{incidente}$
-- Calor reflejado: $\dot{Q}_{reflejado} = (1-\alpha)\dot{Q}_{incidente}$
+| Material        | Emisividad (\varepsilon) | Uso común          |
+| --------------- | ------------------------ | ------------------ |
+| Cuerpo negro    | 1.0                      | Referencia         |
+| Pintura negra   | 0.98                     | Colectores solares |
+| Aluminio pulido | 0.04                     | Aislamiento        |
+| Concreto        | 0.94                     | Construcción       |
 
 ### 1.2 Trabajo en Fluidos
 
-#### Definición General
+#### 1.2.1 Trabajo de Expansión/Compresión
 
-La definición tradicional del trabajo es:
+```
+    Presión P
+    ┌──────────┐
+    │    Gas      │ → Expansión
+    │             │    W = \int P\,dV
+    └──────────┘
+        Volumen V
+```
 
-$W = \vec{F} \cdot \vec{s} = \int_{s_1}^{s_2} F(s)ds$
+| Proceso    | Trabajo                     | Características |
+| ---------- | --------------------------- | --------------- |
+| Isobárico  | W = P\Delta V               | P constante     |
+| Isotérmico | W = nRT\ln(\frac{V_2}{V_1}) | T constante     |
+| Adiabático | W = C_v(T_1-T_2)            | Q = 0           |
 
-Sin embargo, para fluidos se utilizan las siguientes definiciones:
+#### 1.2.2 Trabajo del Resorte
 
-**Trabajo hecho por el sistema:**
-$W_{out} = \int_{V_i}^{V_f} P \, dV$
+```
+    F = kx
+    ←→
+    ├─\/\/\/─┤
+    x_1            x_2
+```
 
-**Trabajo hecho sobre el sistema:**
-$W_{in} = -\int_{V_i}^{V_f} P \, dV$
+**Fórmula**: W = \frac{1}{2}k(x_2^2 - x_1^2)
 
-Es importante mantener consistencia en la convención de signos utilizada.
+## Ejemplos Resueltos
 
-#### 1.2.1 Trabajo del Resorte
+### Ejemplo 1: Transferencia de Calor por Conducción
 
-Para un resorte que se mueve de un punto $a$ a un punto $b$:
+Calcular el flujo de calor a través de una pared de concreto de 20 cm de espesor y área 2 m², si la diferencia de temperatura es 15°C. (k = 0.8 W/m·K)
 
-$W = \int_a^b kx \, dx = \frac{1}{2}k(b^2 - a^2)$
+**Solución**:
+
+1. Datos:
+   - \Delta x = 0.2 m
+   - A = 2 m²
+   - \Delta T = 15°C
+   - k = 0.8 W/m·K
+2. Aplicando \dot{q} = kA\frac{\Delta T}{\Delta x}:
+   - \dot{q} = (0.8)(2)(15/0.2)
+   - $\dot{q} = 120$ W
+
+### Ejemplo 2: Trabajo en Gas Ideal
+
+Un gas ideal se expande isotérmicamente de 2 L a 5 L a 300 K, con n = 0.5 moles. Calcular el trabajo realizado.
+
+**Solución**:
+
+1. Datos:
+   - T = 300 K
+   - V_1 = 0.002 m³
+   - V_2 = 0.005 m³
+   - n = 0.5 mol
+   - R = 8.314 J/mol·K
+2. Aplicando W = nRT\ln(\frac{V_2}{V_1}):
+   - W = (0.5)(8.314)(300)\ln(0.005/0.002)
+   - $W = 1145.7$ J
+
+> 💡 **Tips para Problemas**:
+>
+> - En conducción, verificar unidades de k
+> - En convección, elegir h según el tipo de flujo
+> - En radiación, usar temperaturas en Kelvin
+> - Para trabajo, mantener consistencia en signos
+
+## Referencias y Material Complementario
+
+- 📚 [Transferencia de Calor](../libro/transferencia_calor.md)
+- 📚 [Primera Ley](../libro/primera_ley.md)
+- 📝 [Formulario del curso](../formulario/formulario_i1.md)
+
+## Ejercicios Propuestos
+
+1. Calcular la pérdida de calor a través de una ventana.
+2. Determinar el trabajo realizado en un ciclo termodinámico simple.
+3. Analizar la transferencia de calor en un intercambiador.

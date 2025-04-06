@@ -1,96 +1,187 @@
 # Resumen Ayudantía 4 - Repaso I1 FIS1523
 
+## Introducción
+
+Esta ayudantía es un repaso integral para la Interrogación 1, cubriendo todos los conceptos fundamentales vistos hasta ahora. El objetivo es consolidar el conocimiento y prepararse efectivamente para la evaluación.
+
+> 💡 **Guía de Estudio**: Enfócate en:
+>
+> 1. Comprender los conceptos fundamentales
+> 2. Practicar la resolución de problemas
+> 3. Identificar las relaciones entre conceptos
+> 4. Manejar las unidades correctamente
+
 ## 1. Conceptos Fundamentales
 
 ### 1.1 Definiciones Básicas
 
-- **Sistema**: Región del espacio o cantidad de materia aislada para su estudio
-- **Entorno**: Todo lo que rodea al sistema
-- **Frontera**: Superficie que separa al sistema de su entorno
-- **Propiedades**:
-  - _Intensivas_: Independientes de la masa
-  - _Extensivas_: Dependientes/proporcionales a la masa
+```
+    Sistema Termodinámico
+┌──────────────┐
+│    │ Frontera           │    │
+│    └─────────┘     │
+│      Sistema                     │
+│                                        │
+└──────────────┘
+       Entorno
+```
+
+| Concepto | Definición             | Ejemplo              |
+| -------- | ---------------------- | -------------------- |
+| Sistema  | Región a estudiar      | Gas en cilindro      |
+| Entorno  | Todo lo exterior       | Aire ambiente        |
+| Frontera | Límite sistema-entorno | Paredes del cilindro |
 
 ### 1.2 Tipos de Sistemas
 
-| Tipo de Sistema | Intercambio de Calor | Intercambio de Trabajo | Intercambio de Masa |
-| --------------- | -------------------- | ---------------------- | ------------------- |
-| Aislado         | No                   | No                     | No                  |
-| Cerrado         | Sí                   | Sí                     | No                  |
-| Abierto         | Sí                   | Sí                     | Sí                  |
-| Adiabático      | No                   | Sí                     | No                  |
+```
+Clasificación por Intercambios:
+
+Sistema    Calor  Trabajo  Masa
+Aislado     ╳      ╳       ╳
+Cerrado     ✓      ✓       ╳
+Abierto     ✓      ✓       ✓
+```
 
 ### 1.3 Leyes de la Termodinámica
 
-1. **Ley 0**: Cuando dos cuerpos están en equilibrio térmico con un tercero, están en equilibrio térmico entre sí
-2. **Ley 1**: La energía no se crea ni se destruye, solo se transforma
-3. **Ley 2**: La energía fluye de tal manera que aumenta la entropía
-4. **Ley 3**: La entropía de un cristal puro perfecto es cero a 0K
+```
+Resumen Visual:
+
+Ley 0: A = B = C (Equilibrio térmico)
+Ley 1: ΔE = Q - W (Conservación)
+Ley 2: ΔS > 0 (Entropía)
+Ley 3: S = 0 a T = 0K
+```
 
 ## 2. Temperatura
 
 ### 2.1 Escalas de Temperatura
 
-- **Conversiones**:
-  - Celsius a Fahrenheit: $T_F = \frac{9}{5}T_C + 32$
-  - Fahrenheit a Celsius: $T_C = \frac{5}{9}(T_F - 32)$
-  - Celsius a Kelvin: $T_K = T_C + 273.15$
-  - Variaciones: $\Delta T(K) = \Delta T(°C)$
-
-### 2.2 Conceptos Importantes
-
-- **Temperatura**: Refleja la energía cinética promedio (propiedad intensiva)
-- **Energía térmica**: Energía cinética total (propiedad extensiva)
-- **Calor**: Transferencia de energía entre sistemas por diferencia de temperatura
+```
+K    °C    °F
+373 ─ 100 ─ 212   Ebullición
+┊    ┊    ┊
+293 ─ 20 ─ 68     Ambiente
+273 ─ 0 ─ 32      Fusión
+┊    ┊    ┊
+0 ─ -273 ─ -460   Cero absoluto
+```
 
 ## 3. Presión
 
 ### 3.1 Definiciones y Unidades
 
-- Presión: $P = \frac{F}{A}$
-- Unidades:
-  - 1 Pa = 1 N/m²
-  - 1 mmHg = 133.3 Pa
-  - 1 bar = 10⁵ Pa
-  - 1 atm = 101325 Pa
+```
+Conversiones de Presión:
+
+1 atm = 101325 Pa
+        = 760 mmHg
+        = 1.013 bar
+        = 14.7 psi
+```
 
 ### 3.2 Presión en Fluidos
 
-- Presión manométrica: $P_{man} = \rho gh$
-- Densidades importantes:
-  - Agua: $\rho_{agua} = 1000$ kg/m³
-  - Aire: $\rho_{aire} = 1.275$ kg/m³
-
-### 3.3 Ley de Dalton
-
-- Presión total: $P_{total} = \sum_{i} P_i$
+```
+    P₀ (atm)
+       ↓
+    ├─────┐
+    │              │
+    │  h          │  P = P₀ + ρgh
+    │              │
+    └─────┘
+```
 
 ## 4. Calor y Balance de Energía
 
 ### 4.1 Transferencia de Calor
 
-1. **Conducción**:
-   - $\dot{Q} = kA|\frac{dT}{dx}| = kA|\frac{\Delta T}{\Delta x}|$
-2. **Convección**:
-   - $\dot{Q} = hA|T_s - T_f|$
-3. **Radiación**:
-   - Emitida: $\dot{Q} = \varepsilon\sigma AT^4$
-   - $\sigma = 5.67 \times 10^{-8}$ W/(m²·K⁴)
+```
+Los Tres Mecanismos:
+
+Conducción   Convección   Radiación
+   →→→               ↑↑↑           ≈≈≈≈≈
+    └──┘            └──┘        └──┘
+    q=-k∇T          q=hΔT         q=εσT⁴
+```
 
 ### 4.2 Trabajo en Fluidos
 
-- Trabajo realizado por el sistema: $W_{out} = \int_{V_i}^{V_f} P dV$
-- Trabajo realizado sobre el sistema: $W_{in} = -\int_{V_i}^{V_f} P dV$
+```
+    P
+    │
+    │   Trabajo = Área
+    └────────────── V
+```
 
-### 4.3 Primera Ley de la Termodinámica
+## 5. Ejemplos Tipo Prueba
 
-- Sistema cerrado: $\Delta U = Q - W_{out} = Q + W_{in}$
-- Sistema abierto: $\Delta U = (Q_{in} - Q_{out}) + (W_{in} - W_{out}) + (E_{m,in} - E_{m,out})$
+### Ejemplo 1: Sistema Compuesto
 
-## 5. Dilatación Térmica
+Un sistema consiste en una barra de aluminio (α = 23×10⁻⁶/°C) y una de acero (α = 11×10⁻⁶/°C), ambas de 1 m. ¿Cuál es la diferencia en sus expansiones al calentarse 50°C?
 
-- Dilatación lineal: $\Delta L = \alpha L_i \Delta T$
-- Dilatación superficial: $\Delta A = 2\alpha A_i \Delta T$
-- Dilatación volumétrica: $\Delta V = 3\alpha V_i \Delta T = \beta V_i \Delta T$
+**Solución**:
 
-**Nota**: Comportamiento anómalo del agua entre 0°C y 4°C (se contrae al aumentar la temperatura).
+1. Para cada barra: ΔL = αL₀ΔT
+2. Aluminio: ΔL₁ = (23×10⁻⁶)(1)(50) = 1.15 mm
+3. Acero: ΔL₂ = (11×10⁻⁶)(1)(50) = 0.55 mm
+4. Diferencia: 0.60 mm
+
+### Ejemplo 2: Transferencia de Calor Compuesta
+
+Una pared tiene capas de ladrillo (k₁ = 0.8 W/m·K, L₁ = 10 cm) y aislante (k₂ = 0.05 W/m·K, L₂ = 5 cm). Si ΔT = 25°C, calcular el flujo de calor por m².
+
+**Solución**:
+
+1. Resistencias en serie: R = L₁/k₁ + L₂/k₂
+2. R = 0.1/0.8 + 0.05/0.05 = 1.125 m²·K/W
+3. q = ΔT/R = 25/1.125 = 22.2 W/m²
+
+## Errores Comunes a Evitar
+
+1. **Unidades**:
+
+   - Usar temperaturas en K para radiación
+   - Convertir presiones a unidades coherentes
+   - No olvidar factores de 10⁻⁶ en α
+
+2. **Signos**:
+
+   - W > 0: trabajo hecho por el sistema
+   - Q > 0: calor recibido por el sistema
+
+3. **Conceptuales**:
+   - Confundir calor y temperatura
+   - Olvidar el trabajo de expansión
+   - No considerar todos los mecanismos de transferencia
+
+## Tips para la I1
+
+1. **Antes del Examen**:
+
+   - Repasar fórmulas clave
+   - Practicar problemas variados
+   - Revisar unidades y conversiones
+
+2. **Durante el Examen**:
+
+   - Leer todo el problema
+   - Hacer diagramas claros
+   - Verificar unidades
+   - Comprobar resultados
+
+3. **Proceso de Resolución**:
+   - Identificar datos dados
+   - Elegir ecuaciones apropiadas
+   - Resolver paso a paso
+   - Verificar orden de magnitud
+
+## Referencias y Material de Estudio
+
+- 📚 [Termodinámica - Resumen General](../libro/termodinamica.md)
+- 📝 [Formulario del curso](../formulario/formulario_i1.md)
+- 🔗 Resúmenes de ayudantías anteriores:
+  - [Ayudantía 1](resumen_ayudantia_1.md)
+  - [Ayudantía 2](resumen_ayudantia_2.md)
+  - [Ayudantía 3](resumen_ayudantia_3.md)
